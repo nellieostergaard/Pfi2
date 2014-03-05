@@ -1,10 +1,8 @@
 package se.mah.k3lara.skaneAPI.view;
 
-//import android.util.Log;
 
 public class Constants {
 	public static final String testURL = "http://www.labs.skanetrafiken.se/v2.2/resultspage.asp?cmdaction=next&selPointFr=%7C81116%7C0&selPointTo=%7C65008%7C0&LastStart=2012-10-14%2008:00";
-	// %7C |, %20 space
 	public static final String baseURL = "http://www.labs.skanetrafiken.se/v2.2/";
 	public static final String queryURL = "resultspage.asp?cmdaction=next&selPointFr=";
 	public static final String getStationURL = "querystation.asp?inpPointfr=";
@@ -26,7 +24,6 @@ public class Constants {
 	public static final String FROMPOS_PREFS_NAME = "toPos";
 	public static final String TOPOS_PREFS_NAME = "fromPos";
 
-	//480 
 	/**
 	 * Build the Querystringz
 	 * @param startStationNumber from skånetrafiken
