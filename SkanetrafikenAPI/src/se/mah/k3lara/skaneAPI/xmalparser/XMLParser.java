@@ -21,7 +21,7 @@ import org.xml.sax.SAXException;
 public class XMLParser {
 
 	/**
-	 * Getting XML from URL making HTTP request
+	 * Returns XML from URL making HTTP request can take any valid URL
 	 * @param url string
 	 * */
 	public String getXmlFromUrl(String url) {
@@ -39,7 +39,6 @@ public class XMLParser {
 		} catch (Exception e) {
 			xml=null;
 		} 
-		// return XML
 		return xml;
 	}
 	
@@ -47,6 +46,8 @@ public class XMLParser {
 	
 	/**
 	 * Getting XML DOM element
+	 * This method checks so it is valid xml and converts the XML to elements so methods 
+	 * for finding elements and values can be used.
 	 * @param XML string
 	 * */
 	public Document getDomElement(String xml){

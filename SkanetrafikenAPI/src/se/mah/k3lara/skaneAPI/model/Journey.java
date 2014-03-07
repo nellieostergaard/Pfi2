@@ -1,7 +1,11 @@
 package se.mah.k3lara.skaneAPI.model;
 
 import java.util.Calendar;
-
+/**
+ * A Journey has a start and an endstation. Stations between start and stop are not implemented in this version
+ * @author K3LARA
+ *
+ */
 public class Journey {
 	private Calendar depDateTime, arrDateTime;
 	private String noOfChanges;
@@ -18,7 +22,6 @@ public class Journey {
 	public Journey(Station startStation, Station endStation) {
 		this.startStation = startStation;
 		this.endStation = endStation;
-		// TODO Auto-generated constructor stub
 	}
 	public Calendar getDepDateTime() {
 		return depDateTime;

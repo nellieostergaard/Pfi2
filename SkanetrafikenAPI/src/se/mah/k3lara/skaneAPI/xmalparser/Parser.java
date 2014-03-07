@@ -15,6 +15,14 @@ import se.mah.k3lara.skaneAPI.view.Constants;
 import se.mah.k3lara.skaneAPI.view.Helpers;
 
 public class Parser {
+	  /**
+  	 * Calls Skånetrafiken API and searches for stations containing a String
+  	 * Use this Url to test from a browser:
+  	 * More information
+  	 * @param serachStart string to search for
+  	 * @return list of stations that fulfills the search criteria. 
+  	 * Always returns a number of central stations like Malmö Copenhagen etc
+  	 * */
 	public static List<Station> getStationsFromURL(String searchStart){
 		List<Station> foundStations = new ArrayList<Station>();
 		String name;
@@ -38,6 +46,15 @@ public class Parser {
 		return foundStations;
 	}
 	
+	 /**
+  	 * Calls Skånetrafiken API and serches for departures from a certain station
+  	 * Use this Url to test from a browser:
+  	 * 
+  	 * More information
+  	 * @param serachURL string to search for
+  	 * @return list of juoreys leaving the specified station. 
+  	 * Always returns a number of central stations like Malmö Copenhagen etc
+  	 * */
 	public static Journeys getJourneys(String searchURL){
     	Journeys journeys = new Journeys();
         XMLParser parser = new XMLParser();

@@ -12,13 +12,10 @@ import java.util.TimeZone;
 public class Helpers{
 	
 	/**
-	 * Check if device is close to a point
-	 * @param latitude as 
-	 * @param longitude as
-	 * @param distance in meters from point max 20
+	 *Extracts hour and minutes from a dateDimestring
+	 * @param String in format 2012-10-15T08:17:00
+	 * @return String in format HH:MM
 	 * */
-	
-	 //Takes a date String in format 2012-10-15T08:17:00 and formats it in the format HH:MM
     public static String formatTime(String dateTimeString){
     	String formattedTime= "";
     	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
@@ -44,11 +41,14 @@ public class Helpers{
 		}
 		
 		formattedTime = formattedTime + " " + hour +":"+minute;
-    	//Log.i(Constants.TAG, formattedTime);
     	return hour +":"+minute;
     }
     
-	 //Takes a date String in format 2012-10-15T08:17:00 and formats it in the format DD/MM
+    /**
+	 *Extracts date and month from dateTimeString and formats 
+	 * @param dateTimeString in format 2012-10-15T08:17:00
+	 * @return format dd/MM
+	 * */
     public static String formatDate(String dateTimeString){
     	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
     	Date date =null;
@@ -63,8 +63,12 @@ public class Helpers{
 		String month = String.valueOf(cal.get(Calendar.MONTH)+1);
     	return day +"/"+month;
     }
-   /**Takes a string on the format  2012-10-15T08:17:00 returns the date in format YYYY-MM-DD*/ 
-    //Te
+    
+    /**
+	 *Converts dates between formats
+	 * @param in format 2012-10-15T08:17:00
+	 * @return String in format YYYY-MM-DD
+	 * */
     public static String getDate(String dateTimeString){
     	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
     	Date date =null;
@@ -82,7 +86,12 @@ public class Helpers{
     }
     
     
-    //Takes  a two dateTime Strings in format 2012-10-15T08:17:00 and calculates difference between them in minutes
+    /**
+  	 *Calculates difference in minutes between two datetimes
+  	 * @param startTime in format 2012-10-15T08:17:00
+  	 * @param endTime in format 2012-10-15T08:17:00
+  	 * @return minutes difference between startTime and endTime
+  	 * */
     public static String getTravelTimeinMinutes(String startTime, String endTime){
     	int diffMinutes= 0;
     	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
@@ -102,6 +111,11 @@ public class Helpers{
     	return String.valueOf(diffMinutes);
     }
     
+    /**
+  	 *Calculates minutes from now to a specific time in the future
+  	 * @param String startTime in format 2012-10-15T08:17:00
+  	 * @return minutes to departure
+  	 * */
     public static String timeToDeparture(String startTime){
     	int diffMinutes=-1;
     	Calendar now = Calendar.getInstance();
@@ -124,6 +138,11 @@ public class Helpers{
     }
 	
   //Takes a date String in format 2012-10-15T08:17:00 and converts it to a calendar object
+    /**
+  	 *Converts a dateTimeString and makes a Calendar object
+  	 * @param dateTimeString in format 2012-10-15T08:17:00
+  	 * @return Calendar object
+  	 * */
     public static Calendar parseCalendarString(String dateTimeString){
     	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
     	Date date =null;
@@ -138,12 +157,21 @@ public class Helpers{
 		return cal;
     }
     
+    /**
+  	 *Returns now
+  	 * @return Calendar object
+  	 * */
     public static Calendar getTimeNow(){
     	Calendar now = Calendar.getInstance();
     	now.setTime(new Date());
     	return now;
     }
     
+    /**
+  	 * Is a dateTime today
+  	 * @param dateTimeString in format 2012-10-15T08:17:00
+  	 * @return true if today
+  	 * */
     public static boolean isToday(String depDateTime) {
     	boolean isToday = false;
 		Calendar depDate = parseCalendarString(depDateTime);
@@ -156,6 +184,11 @@ public class Helpers{
 		return isToday;
 	}
 
+    /**
+  	 * Is a dateTime tomorrow
+  	 * @param dateTimeString in format 2012-10-15T08:17:00
+  	 * @return true if tomorrow
+  	 * */
 	public static boolean isTomorrow(String depDateTime) {
 		boolean isTomorrow = false;
 		Calendar depDate = parseCalendarString(depDateTime);
@@ -168,6 +201,11 @@ public class Helpers{
 		return isTomorrow;
 	}
 	
+	 /**
+  	 * Is a dateTime after tomorrow
+  	 * @param dateTimeString in format 2012-10-15T08:17:00
+  	 * @return true if not today or tomorrow
+  	 * */
 	public static String isAfterTomorrow(String dateTime) {		
 		Calendar depDate = parseCalendarString(dateTime);
 		int month = depDate.get(Calendar.MONTH)+1;

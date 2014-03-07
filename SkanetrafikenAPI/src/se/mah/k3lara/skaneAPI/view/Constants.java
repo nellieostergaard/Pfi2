@@ -11,18 +11,8 @@ public class Constants {
 	public static final String midPartURL = "0&selPointTo=";
 	public static final String lastPartURL = "0&LastStart=";
 	public static final String noOfResults = "&NoOf=";
-	public static double latSjobo = 55.63428;
-	public static double longSjobo = 13.70526;
-	public static int runLimit = 10;
-	public static int getStartedLimit = 15;
-	public static int stayCoolLimit = 60;
 	public static int nbrResultsToGet = 15;
-	public static int nbrStationsToStore = 10;
-	public static final String dummyStationName = "Lägg till ny station";
-	public static final String dummyStationNumber = "999";
-	public static final String PREFS_NAME = "MyPrefsFile";
-	public static final String FROMPOS_PREFS_NAME = "toPos";
-	public static final String TOPOS_PREFS_NAME = "fromPos";
+
 
 	/**
 	 * Build the Querystringz
@@ -50,6 +40,7 @@ public class Constants {
 		return url;
 	}
 	
+	//Constants to use when parsing the XML look in XMLParser
 	public static final String testURLIP = "http://www.labs.skanetrafiken.se/v2.2/resultspage.asp?cmdaction=next&selPointFr=%7C81116%7C0&selPointTo=%7C65008%7C0&LastStart=2012-10-11%2019:38";
 	public static final String KEY_Journey = "Journey"; // parent node
 	public static final String KEY_DepDateTimeFull = "DepDateTimeFull"; //With date and all
@@ -62,7 +53,6 @@ public class Constants {
 	public static final String KEY_LineTypeName = "LineTypeName";
 	public static final String KEY_TravelTime = "TravelTime";
 	public static final String KEY_TimeToDeparture = "TimeToDeparture";
-	public static final String TAG = "k3larra";
 	public static final String KEY_NoOfChanges = "NoOfChanges";
 	public static final String KEY_NoOfZones = "NoOfZones";
 	public static final String KEY_DepTimeDeviation = "DepTimeDeviation";

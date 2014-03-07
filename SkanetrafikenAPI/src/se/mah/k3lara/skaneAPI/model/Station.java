@@ -1,5 +1,10 @@
 package se.mah.k3lara.skaneAPI.model;
 
+/**
+ * Contains all information for an individual station 
+ * @author K3LARA
+ *
+ */
 public class Station implements Comparable<Station>{
 	private String stationNbr;
 	private String stationName;
