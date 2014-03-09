@@ -54,28 +54,32 @@ public class XMLParser {
 		Document doc = null;
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		try {
-
 			DocumentBuilder db = dbf.newDocumentBuilder();
-
 			InputSource is = new InputSource();
 		        is.setCharacterStream(new StringReader(xml));
 		        doc = db.parse(is); 
-
 			} catch (ParserConfigurationException e) {
-				//Log.e("Error: ", e.getMessage());
 				return null;
 			} catch (SAXException e) {
-				//Log.e("Error: ", e.getMessage());
 	            return null;
 			} catch (IOException e) {
-				//Log.e("Error: ", e.getMessage());
 				return null;
 			}
-
 	        return doc;
 	}
 
-	/** Getting node value
+	 
+	 /**
+	  * Getting node value
+	  * @param Element node
+	  * @param key string
+	  * */
+	 public String getValue(Element item, String str) {		
+			NodeList n = item.getElementsByTagName(str);		
+			return this.getElementValue(n.item(0));
+		}
+	 
+		/** Getting node value
 	  * @param elem element
 	  */
 	 public final String getElementValue( Node elem ) {
@@ -91,14 +95,4 @@ public class XMLParser {
 	     }
 	     return "";
 	 }
-	 
-	 /**
-	  * Getting node value
-	  * @param Element node
-	  * @param key string
-	  * */
-	 public String getValue(Element item, String str) {		
-			NodeList n = item.getElementsByTagName(str);		
-			return this.getElementValue(n.item(0));
-		}
 }

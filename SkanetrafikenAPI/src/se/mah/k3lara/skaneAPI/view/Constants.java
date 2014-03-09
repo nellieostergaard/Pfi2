@@ -40,29 +40,4 @@ public class Constants {
 		return url;
 	}
 	
-	//Constants to use when parsing the XML look in XMLParser
-	public static final String testURLIP = "http://www.labs.skanetrafiken.se/v2.2/resultspage.asp?cmdaction=next&selPointFr=%7C81116%7C0&selPointTo=%7C65008%7C0&LastStart=2012-10-11%2019:38";
-	public static final String KEY_Journey = "Journey"; // parent node
-	public static final String KEY_DepDateTimeFull = "DepDateTimeFull"; //With date and all
-	public static final String KEY_DepDateTime = "DepDateTime";
-	public static final String KEY_ArrDateTime = "ArrDateTime";
-	public static final String KEY_From = "From";
-	public static final String KEY_To = "To";
-	public static final String KEY_Line = "Line";
-	public static final String KEY_Name = "Name";
-	public static final String KEY_LineTypeName = "LineTypeName";
-	public static final String KEY_TravelTime = "TravelTime";
-	public static final String KEY_TimeToDeparture = "TimeToDeparture";
-	public static final String KEY_NoOfChanges = "NoOfChanges";
-	public static final String KEY_NoOfZones = "NoOfZones";
-	public static final String KEY_DepTimeDeviation = "DepTimeDeviation";
-	public static final String KEY_ArrTimeDeviation = "ArrTimeDeviation";
-	public static final String KEY_StartPoints = "StartPoints";
-	public static final String KEY_Point = "Point";
-	public static final String KEY_Point_Name = "Name";
-	public static final String KEY_Point_Id = "Id";
-	public static final String KEY_Point_X = "X";
-	public static final String KEY_Point_Y = "Y";
-	public static final String KEY_Point_ToStation = "ToStation";
-	public static final String KEY_Point_FromStation = "FromStation";
 }

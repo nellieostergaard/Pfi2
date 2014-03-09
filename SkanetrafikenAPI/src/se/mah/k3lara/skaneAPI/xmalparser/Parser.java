@@ -33,13 +33,13 @@ public class Parser {
 	     String xml = parser.getXmlFromUrl(Constants.baseURL+Constants.getStationURL+searchStart);
 	     if (xml!=null){
 				Document doc = parser.getDomElement(xml); // getting DOM element
-				NodeList nl = doc.getElementsByTagName(Constants.KEY_Point);
+				NodeList nl = doc.getElementsByTagName("Point");
 				for (int i = 0; i < nl.getLength(); i++) {
 					Element e = (Element) nl.item(i);
-					name  = parser.getValue(e,Constants.KEY_Point_Name);
-					id = parser.getValue(e,Constants.KEY_Point_Id);
-					x = parser.getValue(e, Constants.KEY_Point_X);
-					y = parser.getValue(e, Constants.KEY_Point_Y);
+					name  = parser.getValue(e,"Name");
+					id = parser.getValue(e,"Id");
+					x = parser.getValue(e, "X");
+					y = parser.getValue(e, "Y");
 					foundStations.add(new Station(name,id,x,y));
 				}
 	     }
@@ -114,8 +114,8 @@ public class Parser {
 					}	
 				}
 				
-				String depTimeString = parser.getValue(e, Constants.KEY_DepDateTime);
-			    String arrTimeString = parser.getValue(e, Constants.KEY_ArrDateTime);
+				String depTimeString = parser.getValue(e, "DepDateTime");
+			    String arrTimeString = parser.getValue(e, "ArrDateTime");
 			    String travelMinutes = Helpers.getTravelTimeinMinutes(depTimeString, arrTimeString);
 			    depTime = Helpers.parseCalendarString(depTimeString);
 			    arrTime = Helpers.parseCalendarString(arrTimeString);
