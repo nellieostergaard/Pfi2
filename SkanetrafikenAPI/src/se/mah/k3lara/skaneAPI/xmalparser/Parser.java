@@ -8,11 +8,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import se.mah.k3lara.skaneAPI.control.Constants;
+import se.mah.k3lara.skaneAPI.control.Helpers;
 import se.mah.k3lara.skaneAPI.model.Journey;
 import se.mah.k3lara.skaneAPI.model.Journeys;
 import se.mah.k3lara.skaneAPI.model.Station;
-import se.mah.k3lara.skaneAPI.view.Constants;
-import se.mah.k3lara.skaneAPI.view.Helpers;
 
 public class Parser {
 	  /**

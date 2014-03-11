@@ -1,4 +1,4 @@
-package se.mah.k3lara.skaneAPI.view;
+package se.mah.k3lara.skaneAPI.control;
 
 
 public class Constants {
