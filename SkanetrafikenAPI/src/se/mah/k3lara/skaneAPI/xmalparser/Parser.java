@@ -101,7 +101,6 @@ public class Parser {
 					}
 				}
 				toStation = new Station(toStationName, toStationID);
-				
 				//Get the line for the first journey
 				NodeList lineNode = e.getElementsByTagName("Line");
 				line = "";

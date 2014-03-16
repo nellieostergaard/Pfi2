@@ -39,6 +39,7 @@ public class XMLParser {
 		} catch (Exception e) {
 			xml=null;
 		} 
+		//System.out.println(xml);
 		return xml;
 	}
 	
