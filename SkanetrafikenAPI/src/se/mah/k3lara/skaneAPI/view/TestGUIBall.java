@@ -98,7 +98,7 @@ public class TestGUIBall extends JFrame{
 	//This makes a call from the UI thread to show that the ball "laggar" during the call. That doesn't happen for the timer class ThreadWithTimer*/
 	private void runOnThisThread(){					 
    	 //Minutes to next train Malmö - Lund
-   		String searchURL = Constants.getURL("80100","81216",1); //Malmö C = 80000,  Malmö Gatorg 80100, Häsleholm C 93070 Kolla skånetrafiken för fler koder
+   		String searchURL = Constants.getURL("80000","81216",1); //Malmö C = 80000,  Malmö Gatorg 80100, Häsleholm C 93070 Kolla skånetrafiken för fler koder
    		Journeys journeys = Parser.getJourneys(searchURL);
    		if (journeys.getJourneys().get(0) != null ){
    			minutesLabel2.setText(journeys.getJourneys().get(0).getTimeToDeparture());
