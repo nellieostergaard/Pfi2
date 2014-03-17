@@ -2,6 +2,7 @@ package se.mah.k3lara.skaneAPI.view;
 
 import java.util.ArrayList;
 
+import se.mah.k3lara.skaneAPI.control.Constants;
 import se.mah.k3lara.skaneAPI.model.Journey;
 import se.mah.k3lara.skaneAPI.model.Journeys;
 import se.mah.k3lara.skaneAPI.model.Station;
