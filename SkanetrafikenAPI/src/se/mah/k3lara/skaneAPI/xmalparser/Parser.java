@@ -78,11 +78,13 @@ public class Parser {
 				String fromStationID ="";
 				for (int j =0;j < fromNode.getLength();j++){
 					Element e2 = (Element) fromNode.item(j);
+					System.out.println("mellanstation: "+fromNode.getLength());
 					if (j==0){
 						fromStationName = parser.getValue(e2, "Name");
 						fromStationID =parser.getValue(e2, "Id");
 					}else{
 						//Here is the place to get the intermediate stops
+						System.out.println("mellanstation: "+parser.getValue(e2, "Name"));
 					}
 				}
 				fromStation = new Station(fromStationName, fromStationID);	
@@ -97,6 +99,7 @@ public class Parser {
 						toStationName = parser.getValue(e2, "Name");  
 						toStationID = parser.getValue(e2, "Id");
 					}else{
+						
 						//Here is the place to get the intermediate stops
 					}
 				}
