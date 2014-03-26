@@ -17,5 +17,6 @@ public class BallTimer extends TimerTask {
 	public void run() {
 			testBallPanel.repaint();;
 			System.out.println("retroGIT");
+			System.out.println("retroGIT2");
 	}
 }
