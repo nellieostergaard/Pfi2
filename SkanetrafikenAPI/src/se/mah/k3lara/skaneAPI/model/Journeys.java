@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Journeys {
 	private ArrayList<Journey> journeys;
 	
+	//Creates a list of journeys
 	public Journeys() {
 		// TODO Auto-generated constructor stub
 		journeys = new ArrayList<Journey>();
