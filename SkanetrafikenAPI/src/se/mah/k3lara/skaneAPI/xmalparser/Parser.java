@@ -22,6 +22,7 @@ public class Parser {
   	 * @param serachStart string to search for
   	 * @return list of stations that fulfills the search criteria. 
   	 * Always returns a number of central stations like Malmö Copenhagen etc
+  	 * Ok testar
   	 * */
 	public static List<Station> getStationsFromURL(String searchStart){
 		List<Station> foundStations = new ArrayList<Station>();
