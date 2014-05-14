@@ -28,7 +28,6 @@ public class XMLParser {
 		String xml = null;
 
 		try {
-			// defaultHttpClient
 			DefaultHttpClient httpClient = new DefaultHttpClient();  //Deprecated an should be changed
 			HttpPost httpPost = new HttpPost(url);
 
