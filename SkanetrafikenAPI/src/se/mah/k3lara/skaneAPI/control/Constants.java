@@ -11,8 +11,8 @@ public class Constants {
 	public static final String midPartURL = "0&selPointTo=";
 	public static final String lastPartURL = "0&LastStart=";
 	public static final String noOfResults = "&NoOf=";
-	public static int nbrResultsToGet = 15;
-	public static int nbrResultsToGet2 = 96;
+	public static int nbrResultsToGet = 2500;
+	public static int nbrResultsToGet2 = 9600;
 
 
 	/**
