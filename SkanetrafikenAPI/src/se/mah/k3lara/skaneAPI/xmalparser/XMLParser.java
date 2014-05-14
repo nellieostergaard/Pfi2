@@ -11,7 +11,6 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.w3c.dom.Document;
@@ -32,8 +31,7 @@ public class XMLParser {
 		String xml = null;
 
 		try {
-			// defaultHttpClient
-			HttpClient httpClient = HttpClientBuilder.create().build();  //Deprecated an should be changed
+			HttpClient httpClient = HttpClientBuilder.create().build(); 
 			HttpPost httpPost = new HttpPost(url);
 
 			HttpResponse httpResponse = httpClient.execute(httpPost);
