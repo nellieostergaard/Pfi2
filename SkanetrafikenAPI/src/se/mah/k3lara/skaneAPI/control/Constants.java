@@ -15,7 +15,6 @@ public class Constants {
 	public static int nbrResultsToGet2 = 11;
 
 
-
 	/**
 	 * Build the Querystringz
 	 * @param startStationNumber from skånetrafiken
