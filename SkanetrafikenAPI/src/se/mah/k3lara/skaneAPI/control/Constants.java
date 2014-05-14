@@ -11,14 +11,14 @@ public class Constants {
 	public static final String midPartURL = "0&selPointTo=";
 	public static final String lastPartURL = "0&LastStart=";
 	public static final String noOfResults = "&NoOf=";
-	public static int nbrResultsToGet = 10;
-	public static int nbrResultsToGet2 = 11;
+	public static int nbrResultsToGet = 2;
+	public static int nbrResultsToGet2 = 9;
 
 
 	/**
 	 * Build the Querystringz
-	 * @param startStationNumber from skånetrafiken
-	 * @param endStationNumber from skånetrafiken
+	 * @param startStationNumber from 
+	 * @param endStationNumber from sk
 	 * @param date for first start from in form yyyy-mm-dd
 	 * @param time in format hh:mm 24 H
 	 * @param nbrResults max 20
