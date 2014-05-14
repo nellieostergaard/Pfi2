@@ -118,7 +118,6 @@ public class Helpers{
     	int diffMinutes=-1;
     	Calendar now = Calendar.getInstance();
     	now.setTime(new Date());
-    	//now.setTimeZone(TimeZone.getTimeZone("Europe/Stockholm"));
     	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
     	Date date =null;
 		try {
