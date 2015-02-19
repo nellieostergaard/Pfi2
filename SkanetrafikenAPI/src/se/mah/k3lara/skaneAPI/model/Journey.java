@@ -7,7 +7,8 @@ import java.util.Calendar;
  *
  */
 public class Journey {
-	private Calendar depDateTime, arrDateTime;
+	private Calendar depDateTime;
+	private Calendar arrDateTime;
 	private String noOfChanges;
 	private String lineOnFirstJourney;
 	private String travelMinutes;

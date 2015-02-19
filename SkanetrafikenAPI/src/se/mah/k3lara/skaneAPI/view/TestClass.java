@@ -20,12 +20,11 @@ public class TestClass {
 		for (Journey journey : journeys.getJourneys()) {
 			System.out.print(journey.getStartStation()+" - ");
 			System.out.print(journey.getEndStation());
-			String time = journey.getDepDateTime().get(Calendar.HOUR)+":"+journey.getDepDateTime().get(Calendar.MINUTE);
+			String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY)+":"+journey.getDepDateTime().get(Calendar.MINUTE);
 			System.out.println(" Departs " + time +" that is in "+journey.getTimeToDeparture()+ " minutes. And it is "+journey.getDepTimeDeviation()+" min late");
 		} 
 		
 	   System.out.println("// Stations when searching for stations containing \"Malm\"");
-	   System.out.println(searchURL);
 		ArrayList<Station> searchStations = new ArrayList<Station>(); 
 		searchStations.addAll(Parser.getStationsFromURL("Malm"));
 		for (Station s: searchStations){
