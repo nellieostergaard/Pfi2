@@ -79,14 +79,8 @@ public class Parser {
 				String fromStationID ="";
 				for (int j =0;j < fromNode.getLength();j++){
 					Element e2 = (Element) fromNode.item(j);
-					System.out.println("mellanstation: "+fromNode.getLength());
-					if (j==0){
 						fromStationName = parser.getValue(e2, "Name");
 						fromStationID =parser.getValue(e2, "Id");
-					}else{
-						//Here is the place to get the intermediate stops
-						System.out.println("mellanstation: "+parser.getValue(e2, "Name"));
-					}
 				}
 				fromStation = new Station(fromStationName, fromStationID);	
 				
@@ -131,8 +125,8 @@ public class Parser {
 			    thisJourney.setTimeToDeparture(Helpers.timeToDeparture(depTimeString));
 			    thisJourney.setNoOfZones(parser.getValue(e, "NoOfZones"));
 			    thisJourney.setLineTypeName(parser.getValue(e, "TransportModeName"));
-			    thisJourney.setArrTimeDeviation( parser.getValue(e, "DepTimeDeviation"));
-			    thisJourney.setDepTimeDeviation( parser.getValue(e, "ArrTimeDeviation"));
+			    thisJourney.setArrTimeDeviation( parser.getValue(e, "ArrTimeDeviation"));
+			    thisJourney.setDepTimeDeviation( parser.getValue(e, "DepTimeDeviation"));
 			    journeys.addJourney(thisJourney);
 			}
 		}
