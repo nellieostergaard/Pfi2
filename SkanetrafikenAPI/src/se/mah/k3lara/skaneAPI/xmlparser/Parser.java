@@ -1,4 +1,4 @@
-package se.mah.k3lara.skaneAPI.xmalparser;
+package se.mah.k3lara.skaneAPI.xmlparser;
 
 import java.util.ArrayList;
 import java.util.Calendar;

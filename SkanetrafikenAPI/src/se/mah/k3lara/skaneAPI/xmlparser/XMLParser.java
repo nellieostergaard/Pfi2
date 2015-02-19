@@ -1,4 +1,4 @@
-package se.mah.k3lara.skaneAPI.xmalparser;
+package se.mah.k3lara.skaneAPI.xmlparser;
 
 import java.io.IOException;
 import java.io.StringReader;
