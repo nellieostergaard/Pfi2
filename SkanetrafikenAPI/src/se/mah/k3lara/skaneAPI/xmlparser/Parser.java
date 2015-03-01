@@ -12,17 +12,19 @@ import se.mah.k3lara.skaneAPI.control.Constants;
 import se.mah.k3lara.skaneAPI.control.Helpers;
 import se.mah.k3lara.skaneAPI.model.Journey;
 import se.mah.k3lara.skaneAPI.model.Journeys;
+import se.mah.k3lara.skaneAPI.model.Line;
+import se.mah.k3lara.skaneAPI.model.Lines;
 import se.mah.k3lara.skaneAPI.model.Station;
 
 public class Parser {
 	  /**
   	 * Calls Skånetrafiken API and searches for stations containing a String
   	 * Use this Url to test from a browser:
+  	 * http://www.labs.skanetrafiken.se/v2.2/querystation.asp?inpPointfr=malmö
   	 * More information
   	 * @param serachStart string to search for
-  	 * @return list of stations that fulfills the search criteria. 
+  	 * @return list of stations that fulfils the search criteria. 
   	 * Always returns a number of central stations like Malmö Copenhagen etc
-  	 * Ok testar
   	 * */
 	public static List<Station> getStationsFromURL(String searchStart){
 		List<Station> foundStations = new ArrayList<Station>();
@@ -48,13 +50,12 @@ public class Parser {
 	}
 	
 	 /**
-  	 * Calls Skånetrafiken API and serches for departures from a certain station
-  	 * Use this Url to test from a browser:
-  	 * 
+  	 * Calls Skånetrafiken API and searches for departures from a certain station to another station
+  	 * Use this URL to test from a browser:
+  	 * http://www.labs.skanetrafiken.se/v2.2/resultspage.asp?cmdaction=next&selPointFr=malmö%20C|80000|0&selPointTo=landskrona|82000|0&LastStart=2015-02-24 16:38
   	 * More information
   	 * @param serachURL string to search for
-  	 * @return list of juoreys leaving the specified station. 
-  	 * Always returns a number of central stations like Malmö Copenhagen etc
+  	 * @return a Jourenys object that contains information on journeys from a station to another specified station. 
   	 * */
 	public static Journeys getJourneys(String searchURL){
     	Journeys journeys = new Journeys();
@@ -132,4 +133,53 @@ public class Parser {
 		}
     	return journeys;
     }
+	
+	 /**
+  	 * Calls Skånetrafiken API and searches for nest departures from a certain station returns all lines leaving that station
+  	 * Use this Url to test from a browser from ubåtshallen:
+  	 * http://www.labs.skanetrafiken.se/v2.2/stationresults.asp?selPointFrKey=80046 
+  	 * More information
+  	 * @param Station departure station
+  	 * @return a Lines object containing information on lines leaving the specified station. 
+  	 * */
+	public static Lines getStationResults(Station station){
+		boolean debug = false;
+		String searchURL = Constants.getStationResultURL(station);
+		XMLParser parser = new XMLParser();
+		String lineNo;
+		Calendar depTime;
+		String depTimeDeviation;
+		Lines lines = new Lines(station);
+		String xml = parser.getXmlFromUrl(searchURL); // getting XML
+		if (xml!=null){
+			Document doc = parser.getDomElement(xml); // getting DOM element
+			//Get departure and arrival time
+			NodeList nl = doc.getElementsByTagName("Line"); //Get all nodes of type Line
+			for (int i = 0; i < nl.getLength(); i++) { //Iterate all Line elements
+				Element e = (Element) nl.item(i);  //Get the XML element Line;
+				//Get the value for that tag "No"
+				lineNo = parser.getValue(e, "No"); 
+				if(debug){System.out.println("LineNo: "+ lineNo);} //For debugging.....
+				//Get the value for the tag "JourneyDateTime" //That is departuretime and date as String
+				String journeyDateTime = parser.getValue(e, "JourneyDateTime"); 
+				if(debug){System.out.println("JourneyDateTime: "+ journeyDateTime);}
+				//Convert the String to a Calendar object with a helper method written for this in the Helpers class
+				depTime = Helpers.parseCalendarString(journeyDateTime);
+				//Get the value for that tag "JourneyDateTime"
+				depTimeDeviation = parser.getValue(e, "DepTimeDeviation"); 
+				if(debug){System.out.println("DepTimeDeviation: "+ depTimeDeviation);}
+				//Continue with all other elements in the Line node.......
+				//....
+				
+				//Then we got one Line lets create a line object and add it to Lines
+				Line l = new Line();
+				l.setDepTime(depTime);
+				l.setLine(lineNo);
+				l.setDepTimeDeviation(depTimeDeviation);
+				lines.addLine(l);
+				//Ok next Line element
+			}		
+		}
+		return lines;
+	}
 }

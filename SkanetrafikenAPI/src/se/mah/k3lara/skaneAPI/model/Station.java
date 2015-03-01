@@ -11,6 +11,10 @@ public class Station implements Comparable<Station>{
 	private double latitude; //X coordinate, RT90
 	private double longitude; //Y coordinate, RT90
 	
+	public Station(String stationNbr) {
+		this.stationNbr=stationNbr;
+	}
+	
 	public Station(String stationName,String stationNbr) {
 		this.stationName = stationName;
 		this.stationNbr=stationNbr;
