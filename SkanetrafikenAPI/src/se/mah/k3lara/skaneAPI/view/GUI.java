@@ -1,16 +1,18 @@
 
 package se.mah.k3lara.skaneAPI.view;
-import java.util.Calendar;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.util.Calendar;
+
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+
 import se.mah.k3lara.skaneAPI.model.Lines;
 import se.mah.k3lara.skaneAPI.model.Station;
-import java.awt.Color;
-import java.awt.Font;
 import se.mah.k3lara.skaneAPI.xmlparser.Parser;
 
 @SuppressWarnings("serial")

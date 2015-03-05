@@ -1,9 +1,8 @@
 package se.mah.k3lara.skaneAPI.model;
 
-import se.mah.k3lara.skaneAPI.control.Helpers;
-import se.mah.k3lara.skaneAPI.xmlparser.Parser;
-
 import java.util.Calendar;
+
+import se.mah.k3lara.skaneAPI.xmlparser.Parser;
 
 @SuppressWarnings("unused")
 public class Line {
